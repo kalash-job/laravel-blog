@@ -21,3 +21,6 @@ Route::get('about', ['App\Http\Controllers\PageController', 'about']);
 
 Route::get('articles', ['App\Http\Controllers\ArticleController', 'index'])
 ->name('articles.index');
+
+Route::get('articles/{id}', ['App\Http\Controllers\ArticleController', 'show'])
+    ->name('articles.show');
