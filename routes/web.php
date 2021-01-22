@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{PageController, ArticleController};
 
 /*
 |--------------------------------------------------------------------------
@@ -17,22 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', ['App\Http\Controllers\PageController', 'about']);
+Route::get('about', [PageController::class, 'about']);
 
-Route::get('articles', ['App\Http\Controllers\ArticleController', 'index'])
+Route::get('articles', [ArticleController::class, 'index'])
 ->name('articles.index');
 
-Route::get('articles/create', ['App\Http\Controllers\ArticleController', 'create'])
+Route::get('articles/create', [ArticleController::class, 'create'])
     ->name('articles.create');
 
-Route::post('articles', ['App\Http\Controllers\ArticleController', 'store'])
+Route::post('articles', [ArticleController::class, 'store'])
     ->name('articles.store');
 
-Route::get('articles/{id}/edit', ['App\Http\Controllers\ArticleController', 'edit'])
+Route::get('articles/{id}/edit', [ArticleController::class, 'edit'])
     ->name('articles.edit');
 
-Route::patch('articles/{id}', ['App\Http\Controllers\ArticleController', 'update'])
+Route::patch('articles/{id}', [ArticleController::class, 'update'])
     ->name('articles.update');
 
-Route::get('articles/{id}', ['App\Http\Controllers\ArticleController', 'show'])
+Route::get('articles/{id}', [ArticleController::class, 'show'])
     ->name('articles.show');
