@@ -7,5 +7,6 @@
 @endsection
 
 @section('content')
+    <a href="{{route('articles.edit', $article)}}">Редактировать статью</a>
     <div>{{$article->body}}</div>
 @endsection
