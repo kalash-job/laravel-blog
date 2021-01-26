@@ -31,7 +31,7 @@ class ArticleRequest extends FormRequest
         if ($this->route()->named('articles.update')) {
             $rules['name'] = [
                 'required',
-                Rule::unique('articles', 'name')->ignore($this->id),
+                Rule::unique('articles', 'name')->ignore($this->article->id),
             ];
         }
         return $rules;
